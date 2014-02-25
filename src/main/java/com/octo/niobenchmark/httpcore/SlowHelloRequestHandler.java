@@ -14,7 +14,7 @@ import org.apache.http.nio.protocol.HttpAsyncRequestConsumer;
 import org.apache.http.nio.protocol.HttpAsyncRequestHandler;
 import org.apache.http.protocol.HttpContext;
 
-public final class SlowHelloServiceRequestHandler implements HttpAsyncRequestHandler<HttpRequest> {
+public final class SlowHelloRequestHandler implements HttpAsyncRequestHandler<HttpRequest> {
     private ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
 
     @Override

@@ -3,31 +3,16 @@
 	version="3.0">
 	<display-name>Archetype Created Web Application</display-name>
 	<servlet>
-		<servlet-name>BlockingServlet</servlet-name>
-		<servlet-class>test.blocking.HelloServlet</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>AsyncServlet</servlet-name>
-		<servlet-class>test.asyncservlet.AsyncHelloServlet</servlet-class>
-		<async-supported>true</async-supported>
-	</servlet>
-	<servlet>
-		<servlet-name>AsyncPureHelloServlet</servlet-name>
-		<servlet-class>test.asyncservlet.AsyncPureHelloServlet</servlet-class>
-		<async-supported>true</async-supported>
-	</servlet>
-	<servlet>
 		<servlet-name>HelloServlet</servlet-name>
-		<servlet-class>test.HelloService</servlet-class>
-		<async-supported>true</async-supported>
+		<servlet-class>com.octo.niobenchmark.servlet.blocking.HelloServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>BlockingClockServlet</servlet-name>
-		<servlet-class>test.blocking.ClockServlet</servlet-class>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>com.octo.niobenchmark.servlet.blocking.TestServlet</servlet-class>
 	</servlet>
 	<servlet>
-		<servlet-name>AsyncClockServlet</servlet-name>
-		<servlet-class>test.asyncservlet.AsyncClockServlet</servlet-class>
+		<servlet-name>AsyncTestServlet</servlet-name>
+		<servlet-class>com.octo.niobenchmark.servlet.async.AsyncTestServlet</servlet-class>
 		<async-supported>true</async-supported>
 	</servlet>
 	<servlet-mapping>
@@ -35,23 +20,11 @@
 		<url-pattern>/hello</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>AsyncPureHelloServlet</servlet-name>
-		<url-pattern>/hello2</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>BlockingServlet</servlet-name>
+		<servlet-name>TestServlet</servlet-name>
 		<url-pattern>/test1</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>AsyncServlet</servlet-name>
+		<servlet-name>AsyncTestServlet</servlet-name>
 		<url-pattern>/test2</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>BlockingClockServlet</servlet-name>
-		<url-pattern>/clock1</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>AsyncClockServlet</servlet-name>
-		<url-pattern>/clock2</url-pattern>
 	</servlet-mapping>
 </web-app>

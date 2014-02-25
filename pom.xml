@@ -32,7 +32,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>test-servlet30</finalName>
+		<finalName>war</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -42,6 +42,64 @@
 					<source>1.7</source>
 					<target>1.7</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<filters>
+						<filter>
+							<artifact>com.octo:nio-benchmark</artifact>
+							<excludes>
+								<exclude>WEB-INF/lib/**</exclude>
+								<exclude>WEB-INF/web.xml</exclude>
+								<exclude>index.jsp</exclude>
+							</excludes>
+						</filter>
+					</filters>
+					<relocations>
+						<relocation>
+							<pattern>WEB-INF.classes.com</pattern>
+							<shadedPattern>com</shadedPattern>
+						</relocation>
+					</relocations>
+					<minimizeJar>true</minimizeJar>
+				</configuration>
+				<executions>
+					<execution>
+						<id>HelloServer</id>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<outputFile>target/HelloServer.jar</outputFile>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>com.octo.niobenchmark.httpcore.HelloServer</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+					<execution>
+						<id>TestServer</id>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<outputFile>target/TestServer.jar</outputFile>
+							<transformers>
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>com.octo.niobenchmark.httpcore.TestServer</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
