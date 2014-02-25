@@ -1,6 +1,8 @@
-*.class
+# Work folder
+/target
 
-# Package Files #
-*.jar
-*.war
-*.ear
+
+# Eclipse files
+.classpath
+.project
+/.settings
