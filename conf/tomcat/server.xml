@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Server port="8005" shutdown="SHUTDOWN">
+	<Service name="Catalina">
+		<!-- <Connector executor="tomcatThreadPool" port="8080" protocol="HTTP/1.1" 
+			connectionTimeout="20000" redirectPort="8443" /> -->
+		<!-- Increase the max number of threads and use Nio connector -->
+		<Connector port="8080" connectionTimeout="20000"
+			redirectPort="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+			maxThreads="25000" />
+		<Engine name="Catalina" defaultHost="localhost">
+			<Host name="localhost" appBase="webapps" unpackWARs="true"
+				autoDeploy="true">
+			</Host>
+		</Engine>
+	</Service>
+</Server>
