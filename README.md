@@ -8,7 +8,9 @@ Build the project with maven. You will get 3 artifacts:
 * HelloServer.jar: launch with java -jar HelloServer.jar will listen on port 8081
 * TestServer.jar: launch with java -jar TestServer.jar will listen on port 8082
 
-Available urls:
+Some configuration files samples for Jetty, Tomcat and Linux are available in "conf" folder.
+
+Available urls to test once the applications are running:
 Url | Comment
 --- | ---
 http://localhost:8080/war/hello | a test service implemented with a classic servlet that says hello
@@ -18,3 +20,6 @@ http://localhost:8080/war/test2 | an async servlet that calls the test service w
 http://localhost:8081/war/hello | an async test service implemented with HttpCore NIO that says hello
 http://localhost:8081/war/slowhello | an async test service implemented with HttpCore NIO that says hello after 50 ms
 http://localhost:8082/war/test3 | an async server implemented with HttpCore NIO that calls the test service with an HttpAsyncClient
+
+To test with Apache Benchmark:
+ab -r -k -c10000 -n10000 http://localhost:8080/war/test1
