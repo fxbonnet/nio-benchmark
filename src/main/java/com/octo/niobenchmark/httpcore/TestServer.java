@@ -1,7 +1,7 @@
 package com.octo.niobenchmark.httpcore;
 
 public class TestServer {
-	private static final int THREADS = 2;
+	private static final int THREADS = 4;
 	public static final int PORT = 8082;
 
 	public static void main(String[] args) throws Exception {

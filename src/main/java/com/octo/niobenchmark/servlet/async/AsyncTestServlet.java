@@ -32,7 +32,8 @@ public class AsyncTestServlet extends HttpServlet {
 		httpClient = HttpAsyncClients.custom()
 				.setDefaultIOReactorConfig(ioReactorConfig)
 				.setMaxConnPerRoute(Parameters.HTTP_CLIENT_MAX_CONNECTIONS)
-				.setMaxConnTotal(Parameters.HTTP_CLIENT_MAX_CONNECTIONS).build();
+				.setMaxConnTotal(Parameters.HTTP_CLIENT_MAX_CONNECTIONS)
+				.build();
 		httpClient.start();
 	}
 

@@ -5,5 +5,5 @@ package com.octo.niobenchmark;
  */
 public class Parameters {
 	public final static int HTTP_CLIENT_MAX_CONNECTIONS = 10000;
-	public final static int HTTP_ASYNC_CLIENT_THREADS = 2;
+	public final static int HTTP_ASYNC_CLIENT_THREADS = 4;
 }

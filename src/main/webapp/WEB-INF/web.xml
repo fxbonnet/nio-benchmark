@@ -7,6 +7,11 @@
 		<servlet-class>com.octo.niobenchmark.servlet.blocking.HelloServlet</servlet-class>
 	</servlet>
 	<servlet>
+		<servlet-name>AsyncHelloServlet</servlet-name>
+		<servlet-class>com.octo.niobenchmark.servlet.async.AsyncHelloServlet</servlet-class>
+		<async-supported>true</async-supported>
+	</servlet>
+	<servlet>
 		<servlet-name>TestServlet</servlet-name>
 		<servlet-class>com.octo.niobenchmark.servlet.blocking.TestServlet</servlet-class>
 	</servlet>
@@ -18,6 +23,10 @@
 	<servlet-mapping>
 		<servlet-name>HelloServlet</servlet-name>
 		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AsyncHelloServlet</servlet-name>
+		<url-pattern>/helloasync</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>TestServlet</servlet-name>
