@@ -11,6 +11,7 @@ Build the project with maven. You will get 3 artifacts:
 Some configuration files samples for Jetty, Tomcat and Linux are available in "conf" folder.
 
 Available urls to test once the applications are running:
+
 Url | Comment
 --- | ---
 http://localhost:8080/war/hello | a test service implemented with a classic servlet that says hello
@@ -22,4 +23,6 @@ http://localhost:8081/war/slowhello | an async test service implemented with Htt
 http://localhost:8082/war/test3 | an async server implemented with HttpCore NIO that calls the test service with an HttpAsyncClient
 
 To test with Apache Benchmark:
+```
 ab -r -k -c10000 -n10000 http://localhost:8080/war/test1
+```
